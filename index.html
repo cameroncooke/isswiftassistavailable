@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Check the availability of Xcode's upcoming Swift Assist feature. Be the first to know.">
-    <meta name="keywords" content="Swift Assist, availability, status, xcode">
+    <meta name="description" content="Swift Assist is now available in Xcode 26! Apple's AI coding assistant with ChatGPT integration is here.">
+    <meta name="keywords" content="Swift Assist, Xcode 26, AI coding assistant, ChatGPT, Apple developer tools, available">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.isswiftassistavailable.com/">
-    <title>Is Swift Assist Available?</title>
+    <title>Is Swift Assist Available? YES!</title>
     <style>
         body {
             margin: 0;
@@ -15,31 +15,111 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
             font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
             position: relative;
             text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
         }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+        
         h1 {
-            color: #ff6a00;
+            color: #34c759; /* Apple green for "YES" */
             font-size: clamp(4rem, 12vw, 14rem);
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 5px;
             margin: 0;
-            transition: color 0.3s ease-in-out;
-            animation: fadeIn 1.2s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            animation: fadeIn 1.2s ease-in-out, glow 2s ease-in-out infinite alternate;
+            text-shadow: 0 0 20px rgba(52, 199, 89, 0.3);
         }
+        
         h1:hover {
-            color: #ff8800;
+            color: #30d158;
+            text-shadow: 0 0 30px rgba(52, 199, 89, 0.5);
         }
+        
         h2 {
             color: white;
-            font-size: clamp(2rem, 5vw, 6rem);
-            margin-bottom: 0px;
+            font-size: clamp(1.5rem, 4vw, 4rem);
+            margin-bottom: 20px;
             animation: slideDown 1s ease-out;
         }
+        
+        .subtitle {
+            color: #34c759;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: 600;
+            margin: 20px 0;
+            animation: slideDown 1.2s ease-out;
+        }
+        
+        .info-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+            animation: fadeIn 1.8s ease-in-out;
+            max-width: 800px;
+        }
+        
+        .info-box h3 {
+            color: #ff6a00;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .info-box p {
+            color: #e5e5e7;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature {
+            background: rgba(255, 106, 0, 0.1);
+            border: 1px solid rgba(255, 106, 0, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.2s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 106, 0, 0.15);
+        }
+        
+        .feature h4 {
+            color: #ff6a00;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .feature p {
+            color: #d1d1d6;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+        
         .bmc-button-container {
             position: absolute;
             top: 20px;
@@ -48,43 +128,69 @@
             transform-origin: top right;
             animation: fadeIn 1.5s ease-in-out;
         }
+        
         footer {
             width: 100%;
-            padding: 10px 0;
+            padding: 20px 0;
             color: #999;
             font-size: 0.9rem;
             animation: fadeIn 2s ease-in-out;
-            position: fixed;
-            bottom: 20px;
-            left: 0;
-            right: 0;
-            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
+        
         footer a {
             color: #ff6a00;
             text-decoration: none;
             transition: color 0.2s ease;
         }
+        
         footer a:hover {
             color: #ff8800;
         }
+        
+        .announcement-badge {
+            background: linear-gradient(45deg, #ff6a00, #ff8800);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        
         @keyframes slideDown {
             from { transform: translateY(-20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(52, 199, 89, 0.3); }
+            to { text-shadow: 0 0 40px rgba(52, 199, 89, 0.6); }
+        }
+        
         @media (max-width: 768px) {
-            h1 {
-                font-size: clamp(6rem, 15vw, 16rem);
+            .bmc-button-container {
+                position: static;
+                transform: scale(0.8);
+                margin-bottom: 20px;
             }
-            h2 {
-                font-size: clamp(3rem, 6vw, 8rem);
+            
+            .info-box {
+                padding: 20px;
+                margin: 20px 0;
             }
-            body {
-                padding-bottom: 60px; /* Add padding to ensure content doesn't overlap with fixed footer */
+            
+            .features {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -93,10 +199,43 @@
     <div class="bmc-button-container">
         <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="cameroncooke" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
     </div>
-    <h2>Is Swift Assist Available?</h2>
-    <h1>NO</h1>
+    
+    <div class="container">
+        <div class="announcement-badge">June 2025 Update</div>
+        <h2>Is Swift Assist Available?</h2>
+        <h1>YES!</h1>
+        <div class="subtitle">Available in Xcode 26 with AI Coding Features</div>
+        
+        <div class="info-box">
+            <h3>🎉 Swift Assist is Here!</h3>
+            <p>While Apple no longer uses the "Swift Assist" name, the AI coding assistant functionality is now available in <strong>Xcode 26</strong> with powerful ChatGPT integration and intelligent coding tools.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h4>ChatGPT Integration</h4>
+                    <p>Built-in support for ChatGPT with the option to use other LLM providers or run local models on Apple silicon.</p>
+                </div>
+                <div class="feature">
+                    <h4>Coding Tools</h4>
+                    <p>Generate code, tests, and documentation; iterate on designs; fix errors; and more - all inline with your code.</p>
+                </div>
+                <div class="feature">
+                    <h4>Foundation Models Framework</h4>
+                    <p>Access to on-device Apple Intelligence models with just 3 lines of Swift code for privacy-focused AI features.</p>
+                </div>
+                <div class="feature">
+                    <h4>Smart Code Generation</h4>
+                    <p>AI-powered previews, playgrounds, debugging assistance, and intelligent suggestions to keep you in the flow.</p>
+                </div>
+            </div>
+            
+            <p><strong>Getting Started:</strong> Developers can start using ChatGPT in Xcode 26 without creating an account, and subscribers can connect their accounts for additional requests.</p>
+        </div>
+    </div>
+    
     <footer>
-        Where is <a href="https://dimillian.medium.com/where-is-swift-assist-6ea348767cf3" target="_blank" rel="noopener noreferrer">Swift Assist</a>?
+        <p>Learn more about <a href="https://www.apple.com/newsroom/2025/06/apple-supercharges-its-tools-and-technologies-for-developers/" target="_blank" rel="noopener noreferrer">Xcode 26's AI features</a> | 
+        Originally tracking <a href="https://dimillian.medium.com/where-is-swift-assist-6ea348767cf3" target="_blank" rel="noopener noreferrer">Swift Assist</a></p>
     </footer>
 </body>
 </html>
